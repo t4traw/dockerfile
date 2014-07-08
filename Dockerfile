@@ -10,3 +10,4 @@ RUN make install
 RUN cd ..
 RUN rm -r ruby-2.1.2 ruby-2.1.2.tar.gz
 RUN echo 'gem: --no-document' > /usr/local/etc/gemrc
+RUN gem install bundler --no-rdoc --no-ri
