@@ -7,11 +7,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get -y install build-essential c
 
 RUN curl -O http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz
 RUN tar -zxvf ruby-2.1.2.tar.gz
-RUN cd ruby-2.1.2
-
-RUN ./configure --disable-install-doc
+RUN cd ruby-2.1.2 && ./configure --disable-install-doc
 RUN make
 RUN make install
 RUN cd ..
 RUN rm -r ruby-2.1.2 ruby-2.1.2.tar.gz
+
 RUN echo "gem: --no-ri --no-rdoc" > /etc/gemrc
